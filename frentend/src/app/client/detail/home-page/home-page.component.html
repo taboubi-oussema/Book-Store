@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Book Store</h1>
+
+  <div
+    id="featuredBooksCarousel"
+    class="carousel slide mb-4"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div
+        *ngFor="let book of data.images; let i = index"
+        class="carousel-item"
+        [class.active]="i === 0"
+      >
+        <img
+          [src]="book.img "
+          class="d-block w-100"
+          alt="{{ book.title }}"
+          style="height: 400px; object-fit: cover"
+        />
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div *ngFor="let book of data.NewBooks" class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img
+          src="../assets/book1.jpg"
+          class="card-img-top"
+          alt="{{ book.title }}"
+          style="height: 300px; "
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+          <p class="card-text text-muted">{{ book.author }}</p>
+
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-primary" [routerLink]="['/detail', book.id]">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

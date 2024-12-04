@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h1>Admin Panel - Manage Books</h1>
+
+  <a routerLink="/add" class="btn btn-success mb-3">Add New Book</a>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of data.NewBooks">
+        <td>{{ book.id }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td class="col-12 col-md-5">{{ book.description }}</td>
+        <td>
+          <button class="btn btn-warning m-2" [routerLink]="['/edit', book.id]">Modify</button>
+          <button class="btn btn-danger" (click)="deleteBook(book.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

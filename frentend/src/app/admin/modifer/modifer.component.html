@@ -1,0 +1,46 @@
+<div class="container mt-4">
+
+  <h3>Add a New Book</h3>
+  <form (ngSubmit)="Modifier(addBookForm)" #addBookForm="ngForm">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input
+        type="text"
+        id="title"
+        class="form-control"
+        placeholder="Enter book title"
+        [(ngModel)]="data.old_data.title"
+        name="title"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="author" class="form-label">Author</label>
+      <input
+        type="text"
+        id="author"
+        class="form-control"
+        placeholder="Enter author's name"
+        [(ngModel)]="data.old_data.author"
+        name="author"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        id="description"
+        class="form-control"
+        rows="3"
+        placeholder="Enter book description"
+        [(ngModel)]="data.old_data.description"
+        name="description"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Book</button>
+    <button type="reset" class="btn btn-secondary" >Cancel</button>
+  </form>
+</div>
+
